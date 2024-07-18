@@ -30,7 +30,7 @@ func main() {
 	}
 
 	config.InitConfig("./config.toml")
-	log.InitLog()
+	//log.InitLog()
 	db.InitConn()
 
 	redis.InitRedis()
@@ -42,8 +42,8 @@ func main() {
 		WriteTimeout:   30 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-	fmt.Printf(` Welcome To Pear Admin Go
-	程序运行地址:http://127.0.0.1:%s`,
+	fmt.Printf(`Welcome To Pear Admin Go
+程序运行地址:http://127.0.0.1:%s`,
 		gconv.String(config.Instance().App.HttpPort))
 
 	go func() {

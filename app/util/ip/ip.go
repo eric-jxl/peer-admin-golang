@@ -2,9 +2,10 @@ package ip
 
 import (
 	"encoding/json"
-	"github.com/axgle/mahonia"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/axgle/mahonia"
 )
 
 func GetCityByIp(ip string) string {
@@ -31,9 +32,9 @@ func GetCityByIp(ip string) string {
 	return ""
 }
 
-//src 字符串
-//srcCode 字符串当前编码
-//tagCode 要转换的编码
+// ConvertToString src 字符串
+// srcCode 字符串当前编码
+// tagCode 要转换的编码
 func ConvertToString(src string, srcCode string, tagCode string) string {
 	srcCoder := mahonia.NewDecoder(srcCode)
 	srcResult := srcCoder.ConvertString(src)
@@ -42,4 +43,3 @@ func ConvertToString(src string, srcCode string, tagCode string) string {
 	result := string(cdata)
 	return result
 }
-
