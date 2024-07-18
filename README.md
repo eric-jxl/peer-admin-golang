@@ -44,7 +44,7 @@ cp config.toml.example config.toml
 
 #### 运行项目
 
-```bash
+```go
 go mod tidy
 go run main.go
 ```
